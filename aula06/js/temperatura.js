@@ -1,10 +1,10 @@
-const botao = document.querySelector("#converter")
-const saida = document.querySelector("#resultado")
+const converter = document.querySelector("#converter")
+const resultado = document.querySelector("#resultado")
 
-botao.onclick =()=>{
+converter.onclick =()=>{
     const c = Number(document.querySelector("#celcius").value)
 
     const fahrenheit =c*9/5+32
 
-    saida.textContent="°F"+ fahrenheit.toFixed(2)
+    resultado.textContent="°F"+ fahrenheit.toFixed(1)
 }

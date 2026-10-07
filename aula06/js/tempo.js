@@ -6,5 +6,5 @@ botao.onclick =()=>{
 
     const horas =(Math.floor(n1/60))
     const minutos= (n1%60)
-    saida.textContent=n1+" minutos"+"= "+horas.toFixed(1)+"h"+"\n"+"e "+minutos.toFixed(1)+" minutos"
+    saida.textContent=n1+" minutos"+"= "+horas.toFixed(1)+"h"+" e "+minutos.toFixed(1)+" minutos"
 }
