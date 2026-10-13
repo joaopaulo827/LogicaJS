@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frete | Estrutura de Decisão</title>
+    <link rel="stylesheet" href="../css/style.css">    
+</head>
+<body>
+    <main class="exercicio">    
+    <h1>Frete</h1>
+    
+    <label for="compra">Qual Valor</label>
+    <input type="number" id="compra" step="0.1"><p>
+    <label for="regiao">Qual região</label>    
+    <select name="regiao" id="regiao">
+    <option value="vazio">Selecione</option>   
+    <option value="sul" id="regiao">Sul</option>
+    <option value="sudeste">Sudeste</option>
+    <option value="centro-oeste">Centro Oeste</option>
+    <option value="nordeste">Nordeste</option>
+    <option value="norte">Norte</option>
+    </select><p>
+    <button id="calcular">Calcular</button>    
+    <p id="resultado" class="resultado">O resultado aparece aqui</p>    
+    </main>
+    <script src="js/frete.js"></script>
+</body>
+</html>
