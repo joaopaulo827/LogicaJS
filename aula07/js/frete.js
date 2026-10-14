@@ -1,13 +1,11 @@
 const botao = document.querySelector("#calcular")
-const regiao = document.querySelector("#regiao").value
 const saida = document.querySelector("#resultado")
 
 botao.onclick =()=>{
 const compra = Number(document.querySelector("#compra").value)
+const regiao = document.querySelector("#regiao").value
 let frete
-if(regiao==="vazio"){
-    saida.textContent="Erro"
-}
+
 switch (regiao) {
   case "sul":
     frete = 15
@@ -25,12 +23,18 @@ switch (regiao) {
     frete = 35
     break            
   default:
-    frete = 35
+    frete = -1
 }
-const total=compra+frete
-if(compra >= 200 && (regiao === "sul" || regiao === "sudeste")){
-    saida.textContent="Para o "+ regiao+" dá frete gratis e"+" R$"+total.toFixed(2)
-}else{
-    saida.textContent="Para o "+ regiao+" a frete total é "+frete+" e o total de R$"+total.toFixed(2)
-}
+  if (frete === -1) {
+    saida.textContent = "Escolha a região de entrega."
+    saida.className = "erro"
+  } else if (compra >= 200 && (regiao === "sul" || regiao === "sudeste")) {
+    saida.textContent = "Frete grátis! Total: R$ " + compra.toFixed(2)
+    saida.className = "ok"
+  } else {
+    const total = compra + frete
+    saida.textContent = "Frete: R$ " + frete.toFixed(2) + "\n" +
+                        "Total: R$ " + total.toFixed(2)
+    saida.className = "resultado"
+  }
 }
